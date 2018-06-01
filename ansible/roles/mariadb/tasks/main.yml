@@ -1,0 +1,21 @@
+---
+- name: Add Mysql repo
+  shell: sudo add-apt-repository 'deb http://archive.ubuntu.com/ubuntu trusty universe'
+
+- name: Install Mysql packages
+  become: yes
+  apt: pkg={{ item }} state=present update_cache=yes
+  with_items:
+    - mysql-server-5.6
+    - mysql-client-5.6
+    - python-mysqldb
+- name: Starting Mysql service
+  shell: sudo service mysql start
+
+- name: Create a database
+  become: true
+  mysql_db: name={{ mysql_dbname }} state=present
+
+- name: Create a dedicated user
+  become: true
+  mysql_user: name={{ mysql_user }} password={{ mysql_password }} priv={{ mysql_dbname }}.*:ALL,GRANT state=present

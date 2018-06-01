@@ -1,0 +1,13 @@
+magento_account_public_key: c14e155d578e3c924c019908243aa70c
+magento_account_private_key: 2c6aaa0b26ba45eb989fee94a54a0f1a
+mysql_user: ecs
+mysql_password: adapty@1234
+mysql_dbname: ecs_learning
+magento2_language: en_US
+magento2_currency: USD
+magento2_admin_user: admin
+magento2_admin_password: admin123
+magento2_admin_email: rajendra.namdeo@adapty.com
+magento2_admin_firstname: admin
+magento2_admin_lastname: admin
+magento2_base_url: http://192.168.1.115

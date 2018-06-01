@@ -1,0 +1,13 @@
+---
+- name: Ensure project directory exists
+  file: path=/home/vagrant/repos/magento2 state=directory
+
+- name: Create project
+  shell: git clone https://<user>:<password>@bitbucket.org/gaurav_vashishta/ecs-learning-code-repository.git . 
+  args:
+    chdir: /home/vagrant/repos/magento2
+    creates: /home/vagrant/repos/magento2/composer.json
+- name: Composer install
+  shell: composer install
+  args:
+    chdir: /home/vagrant/repos/magento2

@@ -1,0 +1,6 @@
+---
+- name: Update env.php
+  template: src=env.php.j2 dest=/home/vagrant/repos/magento2/app/etc/env.php
+
+  #- name: Update ecs.conf
+  #  templat: src=ecs.conf dest=/home/vagrant/repos/magento2/app/etc/env.php
