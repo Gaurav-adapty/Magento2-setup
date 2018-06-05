@@ -3,7 +3,7 @@
   file: path=/home/vagrant/repos/magento2 state=directory
 
 - name: Create project
-  shell: git clone https://<user>:<password>@bitbucket.org/gaurav_vashishta/ecs-learning-code-repository.git . 
+  shell: git clone https://<user>:<password>@<GIT repo> . 
   args:
     chdir: /home/vagrant/repos/magento2
     creates: /home/vagrant/repos/magento2/composer.json
